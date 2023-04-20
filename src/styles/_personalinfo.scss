@@ -1,0 +1,80 @@
+@import "./mixin";
+@import "./colors";
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 80%;
+  height: 100%;
+  &_header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    &_h1 {
+      font-size: 2em;
+      font-weight: bold;
+      color: $Marine-blue;
+    }
+    &_p {
+      font-size: 1em;
+      color: $Cool-gray;
+    }
+  }
+  &_inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    &_name,
+    &_email,
+    &_phone {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      &_head {
+        color: $Marine-blue;
+        font-size: 1em;
+      }
+      &_input,
+      &_input_error {
+        height: 2.5rem;
+        font-size: 1em;
+        padding-left: 1em;
+        border: 1px solid $Cool-gray;
+        outline: none;
+        border-radius: 10px;
+
+        &:focus {
+          border: 2px solid $Marine-blue;
+        }
+      }
+      &_input_error {
+        border: 2px solid $Strawberry-red;
+      }
+
+      &_error {
+        color: $Strawberry-red;
+      }
+    }
+  }
+  &_button {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: flex-end;
+    &_next {
+      background-color: $Marine-blue;
+      color: $Light-gray;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 10px;
+      padding-left: 1.2rem;
+      padding-right: 1.2rem;
+      &:hover,
+      &:active {
+        background-color: $Purplish-blue;
+        color: $White;
+        cursor: pointer;
+      }
+    }
+  }
+}

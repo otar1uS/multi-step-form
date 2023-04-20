@@ -1,0 +1,66 @@
+@import "./mixin";
+
+.tracker {
+  height: 70%;
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 10rem;
+  display: flex;
+  padding: 20px;
+  border-radius: 10px;
+  gap: 6rem;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+  &_sidebar {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    background-image: url(../assets/images/bg-sidebar-desktop.svg);
+    height: 100%;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-radius: 10px;
+    padding-top: 2rem;
+    padding-left: 2rem;
+    gap: 2rem;
+    &_items {
+      display: flex;
+      gap: 30px;
+
+      &_circle {
+        @include flex-common;
+        height: 40px;
+        width: 40px;
+
+        border-radius: 50%;
+        border: 1px solid $White;
+        color: $White;
+        &:hover {
+          background-color: $Light-blue;
+          color: black;
+          cursor: pointer;
+          border: none;
+        }
+      }
+      &_text {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        &_step {
+          color: $Cool-gray;
+          font-size: 14px;
+        }
+        &_detail {
+          color: $White;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+  &_step {
+    display: flex;
+    flex: 1;
+    height: 100%;
+    padding-top: 2rem;
+  }
+}
