@@ -1,0 +1,43 @@
+.buttons {
+  display: flex;
+  margin-top: 3rem;
+  justify-content: space-between;
+  &_next {
+    background-color: $Marine-blue;
+    color: $Light-gray;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 10px;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+
+    &:hover,
+    &:active {
+      background-color: $Purplish-blue;
+      color: $White;
+      cursor: pointer;
+    }
+    &:disabled,
+    &:not(:enabled):hover {
+      background-color: $Pastel-blue;
+      color: #fff;
+      cursor: not-allowed;
+    }
+  }
+  &_prev {
+    background-color: $White;
+    color: $Cool-gray;
+    padding: 0.8rem;
+    border: 1px solid $Light-gray;
+    border-radius: 10px;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+    &:hover,
+    &:active {
+      background-color: $White;
+      color: $Marine-blue;
+      cursor: pointer;
+      font-weight: 600;
+    }
+  }
+}

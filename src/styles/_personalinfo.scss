@@ -6,20 +6,7 @@
   gap: 3rem;
   width: 80%;
   height: 100%;
-  &_header {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    &_h1 {
-      font-size: 2em;
-      font-weight: bold;
-      color: $Marine-blue;
-    }
-    &_p {
-      font-size: 1em;
-      color: $Cool-gray;
-    }
-  }
+  @include header;
   &_inputs {
     display: flex;
     flex-direction: column;
@@ -54,26 +41,6 @@
 
       &_error {
         color: $Strawberry-red;
-      }
-    }
-  }
-  &_button {
-    margin-top: 3rem;
-    display: flex;
-    justify-content: flex-end;
-    &_next {
-      background-color: $Marine-blue;
-      color: $Light-gray;
-      padding: 0.8rem;
-      border: none;
-      border-radius: 10px;
-      padding-left: 1.2rem;
-      padding-right: 1.2rem;
-      &:hover,
-      &:active {
-        background-color: $Purplish-blue;
-        color: $White;
-        cursor: pointer;
       }
     }
   }

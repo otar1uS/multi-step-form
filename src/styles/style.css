@@ -63,25 +63,6 @@
 .form_inputs_name_error, .form_inputs_email_error, .form_inputs_phone_error {
   color: hsl(354, 84%, 57%);
 }
-.form_button {
-  margin-top: 3rem;
-  display: flex;
-  justify-content: flex-end;
-}
-.form_button_next {
-  background-color: hsl(213, 96%, 18%);
-  color: hsl(229, 24%, 87%);
-  padding: 0.8rem;
-  border: none;
-  border-radius: 10px;
-  padding-left: 1.2rem;
-  padding-right: 1.2rem;
-}
-.form_button_next:hover, .form_button_next:active {
-  background-color: hsl(243, 100%, 62%);
-  color: hsl(0, 0%, 100%);
-  cursor: pointer;
-}
 
 .tracker {
   height: 70%;
@@ -123,10 +104,9 @@
   border: 1px solid hsl(0, 0%, 100%);
   color: hsl(0, 0%, 100%);
 }
-.tracker_sidebar_items_circle:hover {
+.tracker_sidebar_items_circle_current {
   background-color: hsl(206, 94%, 87%);
   color: black;
-  cursor: pointer;
   border: none;
 }
 .tracker_sidebar_items_text {
@@ -147,4 +127,340 @@
   flex: 1;
   height: 100%;
   padding-top: 2rem;
+}
+
+.plan {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 80%;
+  height: 100%;
+}
+.plan_header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.plan_header_h1 {
+  font-size: 2em;
+  font-weight: bold;
+  color: hsl(213, 96%, 18%);
+}
+.plan_header_p {
+  font-size: 1em;
+  color: hsl(231, 11%, 63%);
+}
+.plan_chooser {
+  display: flex;
+  gap: 1rem;
+}
+.plan_chooser_item_inner {
+  display: flex;
+  width: 33.3%;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid hsl(229, 24%, 87%);
+}
+.plan_chooser_item_inner--checked {
+  background-color: hsl(217, 100%, 97%);
+  border-color: hsl(213, 96%, 18%);
+}
+.plan_chooser_item_inner [type=radio] {
+  display: none;
+}
+.plan_chooser_item_inner:hover {
+  border-color: hsl(213, 96%, 18%);
+}
+.plan_chooser_item_inner_img {
+  display: flex;
+  justify-content: flex-start;
+  width: 3rem;
+  height: 3rem;
+}
+.plan_chooser_item_inner_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.plan_chooser_item_inner_container_h1 {
+  font-size: 20px;
+  color: hsl(213, 96%, 18%);
+  font-weight: 500;
+}
+.plan_chooser_item_inner_container_p {
+  font-size: 1em;
+  color: hsl(231, 11%, 63%);
+}
+.plan_time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.plan_time_month {
+  color: hsl(213, 96%, 18%);
+  font-size: 18 px;
+  font-weight: 700;
+}
+.plan_time_year {
+  color: hsl(213, 96%, 18%);
+  font-size: 18 px;
+  font-weight: 700;
+}
+.plan_time_switch {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 24px;
+}
+.plan_time_switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.plan_time_switch_slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: hsl(213, 96%, 18%);
+  transition: 0.4s;
+  border-radius: 24px;
+}
+.plan_time_switch_slider::before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+.plan_time_switch input:checked + .plan_time_switch_slider {
+  background-color: hsl(213, 96%, 18%);
+}
+.plan_time_switch input:focus + .plan_time_switch_slider {
+  box-shadow: 0 0 1px hsl(213, 96%, 18%);
+}
+.plan_time_switch input:checked + .plan_time_switch_slider::before {
+  transform: translateX(21px);
+}
+
+.buttons {
+  display: flex;
+  margin-top: 3rem;
+  justify-content: space-between;
+}
+.buttons_next {
+  background-color: hsl(213, 96%, 18%);
+  color: hsl(229, 24%, 87%);
+  padding: 0.8rem;
+  border: none;
+  border-radius: 10px;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+}
+.buttons_next:hover, .buttons_next:active {
+  background-color: hsl(243, 100%, 62%);
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+}
+.buttons_next:disabled, .buttons_next:not(:enabled):hover {
+  background-color: hsl(228, 100%, 84%);
+  color: #fff;
+  cursor: not-allowed;
+}
+.buttons_prev {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(231, 11%, 63%);
+  padding: 0.8rem;
+  border: 1px solid hsl(229, 24%, 87%);
+  border-radius: 10px;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+}
+.buttons_prev:hover, .buttons_prev:active {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(213, 96%, 18%);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.adds {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 80%;
+  height: 100%;
+}
+.adds_header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.adds_header_h1 {
+  font-size: 2em;
+  font-weight: bold;
+  color: hsl(213, 96%, 18%);
+}
+.adds_header_p {
+  font-size: 1em;
+  color: hsl(231, 11%, 63%);
+}
+.adds_chooser {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+.adds_chooser_item_inner {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid hsl(229, 24%, 87%);
+}
+.adds_chooser_item_inner--checked {
+  background-color: hsl(217, 100%, 97%);
+  border-color: hsl(213, 96%, 18%);
+}
+.adds_chooser_item_inner [type=radio] {
+  display: none;
+}
+.adds_chooser_item_inner:hover {
+  border-color: hsl(213, 96%, 18%);
+}
+.adds_chooser_item_inner_img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid hsl(231, 11%, 63%);
+}
+.adds_chooser_item_inner_img--checked {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid hsl(231, 11%, 63%);
+  background-color: hsl(243, 100%, 62%);
+  color: hsl(0, 0%, 100%);
+}
+.adds_chooser_item_inner_container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.adds_chooser_item_inner_container_h1 {
+  font-size: 20px;
+  color: hsl(213, 96%, 18%);
+  font-weight: 500;
+}
+.adds_chooser_item_inner_container_p {
+  font-size: 1em;
+  color: hsl(231, 11%, 63%);
+}
+
+.adds_chooser_item_inner_price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: hsl(243, 100%, 62%);
+}
+
+.summary {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 80%;
+  height: 100%;
+}
+.summary_header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.summary_header_h1 {
+  font-size: 2em;
+  font-weight: bold;
+  color: hsl(213, 96%, 18%);
+}
+.summary_header_p {
+  font-size: 1em;
+  color: hsl(231, 11%, 63%);
+}
+.summary_finishedPlan {
+  background-color: hsl(217, 100%, 97%);
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.summary_finishedPlan_planDetails {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.summary_finishedPlan_planDetails_container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.summary_finishedPlan_planDetails_container_planName {
+  font-size: 18px;
+  color: hsl(213, 96%, 18%);
+}
+.summary_finishedPlan_planDetails_container_change {
+  text-decoration: underline;
+  color: hsl(231, 11%, 63%);
+}
+.summary_finishedPlan_planDetails_container_change:hover {
+  cursor: pointer;
+  color: hsl(213, 96%, 18%);
+}
+.summary_finishedPlan_planDetails_price {
+  color: hsl(213, 96%, 18%);
+  font-size: 18px;
+}
+.summary_finishedPlan_adds {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.summary_finishedPlan_adds_name {
+  color: hsl(231, 11%, 63%);
+  font-size: 16px;
+}
+.summary_finishedPlan_adds_price {
+  color: hsl(243, 100%, 62%);
+  font-size: 16 px;
+}
+.summary_finishedPlan_total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.summary_finishedPlan_total_name {
+  color: hsl(231, 11%, 63%);
+  font-size: 16px;
+}
+.summary_finishedPlan_total_price {
+  color: hsl(243, 100%, 62%);
+  font-size: 20px;
 }/*# sourceMappingURL=style.css.map */

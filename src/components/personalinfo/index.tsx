@@ -1,4 +1,6 @@
 import { useReducer } from "react";
+import Buttons from "../buttons";
+import FormProps from "../../form";
 type PersonalInfoState = {
   name: string;
   email: string;
@@ -53,9 +55,7 @@ function isValidPhoneNumber(phone: string): boolean {
   return phoneRegex.test(phone);
 }
 
-type Props = {};
-
-const PersonalInfo = (props: Props) => {
+const PersonalInfo = ({ setGoBackward, setGoForward, index }: FormProps) => {
   const [state, dispatch] = useReducer(reducer, {
     name: "",
     email: "",
@@ -79,7 +79,6 @@ const PersonalInfo = (props: Props) => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // handle form submission
   };
 
   return (
@@ -143,11 +142,19 @@ const PersonalInfo = (props: Props) => {
           )}
         </div>
       </div>
-      <div className="form_button">
-        <button className="form_button_next" type="submit">
-          Next Step
-        </button>
-      </div>
+      <Buttons
+        goForward={setGoForward}
+        goBackward={setGoBackward}
+        isItSelected={
+          state.name &&
+          state.email &&
+          state.phone &&
+          !state.nameError &&
+          !state.emailError &&
+          !state.phoneError
+        }
+        index={index}
+      />
     </form>
   );
 };

@@ -1,0 +1,124 @@
+.plan {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 80%;
+  height: 100%;
+
+  @include header;
+  &_chooser {
+    display: flex;
+    gap: 1rem;
+
+    &_item_inner {
+      display: flex;
+      width: 33.3%;
+      flex-direction: column;
+      gap: 3rem;
+      padding: 1rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      border: 1px solid $Light-gray;
+
+      &--checked {
+        background-color: $Magnolia;
+        border-color: $Marine-blue;
+      }
+      [type="radio"] {
+        display: none;
+      }
+
+      &:hover {
+        border-color: $Marine-blue;
+      }
+      &_img {
+        display: flex;
+
+        justify-content: flex-start;
+        width: 3rem;
+        height: 3rem;
+      }
+      &_container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        &_h1 {
+          font-size: 20px;
+          color: $Marine-blue;
+          font-weight: 500;
+        }
+        &_p {
+          font-size: 1em;
+          color: $Cool-gray;
+        }
+      }
+    }
+  }
+  &_time {
+    @include flex-common;
+    gap: 1rem;
+    &_month {
+      color: $Marine-blue;
+      font-size: 18 px;
+      font-weight: 700;
+    }
+    &_year {
+      color: $Marine-blue;
+      font-size: 18 px;
+      font-weight: 700;
+    }
+    &_switch {
+      position: relative;
+      display: inline-block;
+      width: 45px;
+      height: 24px;
+
+      input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      &_slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $Marine-blue;
+        transition: 0.4s;
+        border-radius: 24px;
+
+        &::before {
+          position: absolute;
+          content: "";
+          height: 18px;
+          width: 18px;
+          left: 3px;
+          bottom: 3px;
+          background-color: white;
+          transition: 0.4s;
+          border-radius: 50%;
+        }
+      }
+
+      input:checked + .plan_time_switch_slider {
+        background-color: $Marine-blue;
+      }
+
+      input:focus + .plan_time_switch_slider {
+        box-shadow: 0 0 1px $Marine-blue;
+      }
+
+      input:checked + .plan_time_switch_slider::before {
+        transform: translateX(21px);
+      }
+    }
+  }
+}
+
+//

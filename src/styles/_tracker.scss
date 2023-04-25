@@ -35,10 +35,10 @@
         border-radius: 50%;
         border: 1px solid $White;
         color: $White;
-        &:hover {
+        &_current {
           background-color: $Light-blue;
           color: black;
-          cursor: pointer;
+
           border: none;
         }
       }

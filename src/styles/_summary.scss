@@ -1,0 +1,72 @@
+.summary {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 80%;
+  height: 100%;
+  @include header;
+
+  &_finishedPlan {
+    background-color: $Magnolia;
+    padding: 1rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    &_planDetails {
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+
+      justify-content: space-between;
+      &_container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        &_planName {
+          font-size: 18px;
+          color: $Marine-blue;
+        }
+        &_change {
+          text-decoration: underline;
+          color: $Cool-gray;
+          &:hover {
+            cursor: pointer;
+            color: $Marine-blue;
+          }
+        }
+      }
+      &_price {
+        color: $Marine-blue;
+        font-size: 18px;
+      }
+    }
+    &_adds {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &_name {
+        color: $Cool-gray;
+        font-size: 16px;
+      }
+      &_price {
+        color: $Purplish-blue;
+        font-size: 16 px;
+      }
+    }
+    &_total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &_name {
+        color: $Cool-gray;
+        font-size: 16px;
+      }
+      &_price {
+        color: $Purplish-blue;
+        font-size: 20px;
+      }
+    }
+  }
+}
