@@ -41,3 +41,59 @@
     }
   }
 }
+
+@media (min-width: 1025px) {
+  .buttons {
+    &_next {
+      padding: 1rem 1.5rem;
+    }
+    &_prev {
+      padding: 1rem 1.5rem;
+    }
+  }
+}
+
+/* For screens between 768px and 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .buttons {
+    &_next {
+      padding: 0.8rem 1.2rem;
+    }
+    &_prev {
+      padding: 0.8rem 1.2rem;
+    }
+  }
+}
+
+/* For screens between 480px and 768px */
+@media (min-width: 480px) and (max-width: 767px) {
+  .buttons {
+    display: block;
+    margin-top: 2rem;
+    &_next {
+      margin-top: 1.5rem;
+      width: 100%;
+      padding: 0.8rem;
+      border-radius: 5px;
+      &:hover,
+      &:active {
+        background-color: $Purplish-blue;
+        color: $White;
+        cursor: pointer;
+      }
+    }
+    &_prev {
+      margin-top: 1rem;
+      width: 100%;
+      padding: 0.8rem;
+      border-radius: 5px;
+      &:hover,
+      &:active {
+        background-color: $White;
+        color: $Marine-blue;
+        cursor: pointer;
+        font-weight: 600;
+      }
+    }
+  }
+}

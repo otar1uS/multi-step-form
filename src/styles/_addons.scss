@@ -73,3 +73,44 @@
 
   color: $Purplish-blue;
 }
+
+@media only screen and (max-width: 1024px) {
+  .adds {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .adds {
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+  }
+  .adds_chooser_item_inner_price {
+    font-size: 0.8em;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .adds {
+    gap: 1rem;
+  }
+  .adds_chooser_item_inner_price {
+    font-size: 0.7em;
+  }
+  .adds_chooser_item_inner {
+    gap: 0.5rem;
+    &_img {
+      width: 0.8rem;
+      height: 0.8rem;
+    }
+    &_container {
+      &_h1 {
+        font-size: 16px;
+      }
+      &_p {
+        font-size: 0.9em;
+      }
+    }
+  }
+}

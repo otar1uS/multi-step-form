@@ -121,4 +121,60 @@
   }
 }
 
+@media only screen and (max-width: 1024px) {
+  .plan {
+    width: 90%;
+    &_chooser {
+      &_item_inner {
+        width: 50%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .plan {
+    width: 100%;
+    &_chooser {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-gap: 1rem;
+      &_item_inner {
+        width: 100%;
+      }
+    }
+    &_time {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .plan {
+    &_chooser {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      grid-gap: 1rem;
+      &_item_inner {
+        width: 100%;
+      }
+    }
+    &_time {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      &_month {
+        font-size: 16px;
+      }
+      &_year {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
 //

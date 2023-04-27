@@ -5,7 +5,6 @@ import SelectPlan from "./components/selectplan";
 import useForm from "./hook/useForm";
 import AddOns from "./components/addons";
 import Summary from "./components/summary";
-
 const sideBar = ["Your Info", "Select Plan", "Add-Ons", "Summary"];
 
 function App() {

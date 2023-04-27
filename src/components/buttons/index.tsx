@@ -1,5 +1,11 @@
 import { useDispatch } from "react-redux";
-import { setPlanNumber, planChecker, adds } from "../../store/store";
+import {
+  setPlanNumber,
+  planChecker,
+  adds,
+  isItFinished,
+} from "../../store/store";
+
 interface Addon {
   identifier: string;
   name: string;
@@ -44,6 +50,7 @@ const Buttons = ({
           goForward();
           dispatch(setPlanNumber(planNumber));
           dispatch(planChecker());
+          if (index === 3) dispatch(isItFinished());
 
           if (addsItems) dispatch(adds(addsItems));
         }}

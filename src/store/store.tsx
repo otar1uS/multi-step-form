@@ -5,6 +5,7 @@ const initialState = {
   isItYear: false,
   InitialAdds: [],
   total: 0,
+  itsFinished: false,
 };
 
 const counterSlice = createSlice({
@@ -28,17 +29,17 @@ const counterSlice = createSlice({
     adds: (state, action) => {
       state.InitialAdds = [...state.InitialAdds, action.payload];
     },
+    isItFinished: (state) => {
+      state.itsFinished = !state.itsFinished;
+    },
   },
-   if(action.type==='SET_STATE'){
-    state.planNumber=action.payload.planNumber
-   }
-
 });
 
 const store = configureStore({
   reducer: counterSlice.reducer,
 });
 
-export const { setPlanNumber, planChecker, adds } = counterSlice.actions;
+export const { setPlanNumber, planChecker, adds, isItFinished } =
+  counterSlice.actions;
 
 export default store;
